@@ -1,0 +1,28 @@
+#DEEP_SEEK llm
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+
+# llm = HuggingFaceEndpoint(
+#     repo_id="deepseek-ai/DeepSeek-R1"
+# )
+# model = ChatHuggingFace(llm=llm)
+
+# response = model.invoke("Who are you?")
+# print(response.content) #you can see the response from the model
+
+
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+
+llm = HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-R1",
+
+)
+
+chat_model = ChatHuggingFace(llm=llm)
+
+response = chat_model.invoke("Who are you?")
+print(response.content)  # you can see the response from the model
